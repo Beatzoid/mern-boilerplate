@@ -25,7 +25,7 @@ jobs:
               run: cd server && yarn lint
 
             - name: Save ESLint JSON Report
-              run: cd server && yarn eslint --output-file eslint_report.json --format json src
+              run: cd server && yarn eslint --output-file ../eslint_report.json --format json src
               continue-on-error: true
 
             - name: Annotate Code Linting Results
@@ -37,5 +37,5 @@ jobs:
             - name: Upload ESLint report
               uses: actions/upload-artifact@v3
               with:
-                  name: ./server/eslint_report.json
-                  path: ./server/eslint_report.json
+                  name: eslint_report.json
+                  path: eslint_report.json
